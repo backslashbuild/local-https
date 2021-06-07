@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  proxy:
+    build:
+      context: ../src
+      dockerfile: Dockerfile
+    environment:
+      - APP_URL=http://hello-world
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./certs:/etc/certs:ro
+
+  hello-world:
+    image: tutum/hello-world

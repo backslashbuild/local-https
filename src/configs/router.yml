@@ -1,0 +1,12 @@
+http:
+  routers:
+    to-app:
+      rule: "Host(`dev.localhost`)"
+      service: app
+      tls: {}
+
+  services:
+    app:
+      loadBalancer:
+        servers:
+          - url: {{ expandenv "${APP_URL}" }}
