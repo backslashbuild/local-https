@@ -33,3 +33,5 @@ mkcert -cert-file certs/local-cert.pem -key-file certs/local-key.pem "dev.localh
    ```
 
    Open `https://dev.localhost` in your browser!
+
+   This will work for any url fitting the pattern `https://*.dev.localhost`, e.g. `https://myproject.dev.localhost`, this is to help you switch between projects without your cookies and settings clashing.

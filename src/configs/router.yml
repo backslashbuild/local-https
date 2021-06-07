@@ -1,7 +1,7 @@
 http:
   routers:
     to-app:
-      rule: "Host(`dev.localhost`)"
+      rule: "HostRegexp(`dev.localhost`, `{subdomain:[a-z]+}.dev.localhost`)"
       service: app
       tls: {}
 
